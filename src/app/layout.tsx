@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { AppThemeProvider } from "@/lib/libresplit-web/AppThemeProvider";
 
 export const metadata: Metadata = {
   title: "LibreSplit",
@@ -13,8 +14,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body>{children}</body>
+    <html lang="en" suppressHydrationWarning>
+      <body>
+        <AppThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          {children}
+        </AppThemeProvider>
+      </body>
     </html>
   );
 }
