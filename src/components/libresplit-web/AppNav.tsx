@@ -9,6 +9,8 @@ import {
 } from "@/components/ui/navigation-menu";
 import Image from "next/image";
 import { AppThemeToggleButton } from "./AppThemeToggleButton";
+import { Github } from "lucide-react";
+import { Button } from "../ui/button";
 
 export function AppNav() {
   return (
@@ -56,5 +58,14 @@ function LeftNav() {
 }
 
 function RightNav() {
-  return <AppThemeToggleButton />;
+  return(
+    <div className="flex items-center gap-2">
+      <Button>
+        <Link href="https://github.com/wins1ey/LibreSplit">
+          <Github />
+        </Link>
+      </Button>
+      <AppThemeToggleButton />
+    </div>
+  );
 }
