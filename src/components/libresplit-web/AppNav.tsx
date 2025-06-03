@@ -58,7 +58,7 @@ function LeftNav() {
 }
 
 function RightNav() {
-  return(
+  return (
     <div className="flex items-center gap-2">
       <Button>
         <Link href="https://github.com/wins1ey/LibreSplit">
