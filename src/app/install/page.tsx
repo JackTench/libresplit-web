@@ -37,6 +37,13 @@ export default function InstallPage() {
                 language="bash"
                 theme={dracula}
               />
+              <p>LibreSplit has the following dependencies:</p>
+              <ul className="list-inside list-disc">
+                <li>libgtk+-3.0</li>
+                <li>x11</li>
+                <li>libjansson</li>
+                <li>luajit</li>
+              </ul>
             </div>
           </AccordionContent>
         </AccordionItem>
