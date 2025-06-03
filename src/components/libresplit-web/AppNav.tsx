@@ -8,6 +8,7 @@ import {
   NavigationMenuList,
 } from "@/components/ui/navigation-menu";
 import Image from "next/image";
+import { Github } from "lucide-react";
 
 export function AppNav() {
   return (
@@ -27,6 +28,38 @@ export function AppNav() {
                   />
                   <span className="text-xl">LibreSplit</span>
                 </div>
+              </Link>
+            </NavigationMenuLink>
+          </NavigationMenuItem>
+
+          <NavigationMenuItem>
+            <NavigationMenuLink asChild>
+              <Link href="/install">
+                <div>Install</div>
+              </Link>
+            </NavigationMenuLink>
+          </NavigationMenuItem>
+
+          <NavigationMenuItem>
+            <NavigationMenuLink asChild>
+              <Link href="/converter">
+                <div>Split Converter</div>
+              </Link>
+            </NavigationMenuLink>
+          </NavigationMenuItem>
+
+          <NavigationMenuItem>
+            <NavigationMenuLink asChild>
+              <Link href="/docs">
+                <div>Documentation</div>
+              </Link>
+            </NavigationMenuLink>
+          </NavigationMenuItem>
+
+          <NavigationMenuItem>
+            <NavigationMenuLink asChild>
+              <Link href="https://github.com/wins1ey/LibreSplit">
+                <Github />
               </Link>
             </NavigationMenuLink>
           </NavigationMenuItem>
