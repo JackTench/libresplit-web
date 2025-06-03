@@ -8,63 +8,53 @@ import {
   NavigationMenuList,
 } from "@/components/ui/navigation-menu";
 import Image from "next/image";
-import { Github } from "lucide-react";
+import { AppThemeToggleButton } from "./AppThemeToggleButton";
 
 export function AppNav() {
   return (
-    <nav>
+    <nav className="flex w-full items-center justify-between border-b px-4 py-2">
+      <div className="flex items-center">
+        <LeftNav />
+      </div>
+
       <NavigationMenu>
         <NavigationMenuList>
-          {/* Home Button - Logo and Text */}
           <NavigationMenuItem>
             <NavigationMenuLink asChild>
-              <Link href="/">
-                <div className="flex items-center gap-2">
-                  <Image
-                    src="logo.svg"
-                    width={32}
-                    height={32}
-                    alt="LibreSplit"
-                  />
-                  <span className="text-xl">LibreSplit</span>
-                </div>
-              </Link>
+              <Link href="/install">Install</Link>
             </NavigationMenuLink>
           </NavigationMenuItem>
 
           <NavigationMenuItem>
             <NavigationMenuLink asChild>
-              <Link href="/install">
-                <div>Install</div>
-              </Link>
+              <Link href="/converter">Split Converter</Link>
             </NavigationMenuLink>
           </NavigationMenuItem>
 
           <NavigationMenuItem>
             <NavigationMenuLink asChild>
-              <Link href="/converter">
-                <div>Split Converter</div>
-              </Link>
-            </NavigationMenuLink>
-          </NavigationMenuItem>
-
-          <NavigationMenuItem>
-            <NavigationMenuLink asChild>
-              <Link href="/docs">
-                <div>Documentation</div>
-              </Link>
-            </NavigationMenuLink>
-          </NavigationMenuItem>
-
-          <NavigationMenuItem>
-            <NavigationMenuLink asChild>
-              <Link href="https://github.com/wins1ey/LibreSplit">
-                <Github />
-              </Link>
+              <Link href="/docs">Documentation</Link>
             </NavigationMenuLink>
           </NavigationMenuItem>
         </NavigationMenuList>
       </NavigationMenu>
+
+      <div className="flex items-center">
+        <RightNav />
+      </div>
     </nav>
   );
+}
+
+function LeftNav() {
+  return (
+    <Link href="/" className="flex items-center gap-2">
+      <Image src="logo.svg" width={32} height={32} alt="LibreSplit" />
+      <span className="text-xl font-semibold">LibreSplit</span>
+    </Link>
+  );
+}
+
+function RightNav() {
+  return <AppThemeToggleButton />;
 }
