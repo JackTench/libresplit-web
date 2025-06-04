@@ -1,3 +1,5 @@
+import { AppFileUpload } from "@/components/libresplit-web/AppFileUpload";
+
 export default function ConverterPage() {
-  return <h1>Split Converter</h1>;
+  return <AppFileUpload />;
 }
