@@ -12,10 +12,30 @@ export function AppFileUpload() {
     setSelectedFile(file);
   };
 
+  // Handler for file uploads.
+  const handleSubmit = async () => {
+    // Check file has been selected.
+    if (!selectedFile) {
+      alert("Please select a file before submitting!");
+      return;
+    }
+
+    try {
+      // Get text from file and print to dev console.
+      const text = await selectedFile.text();
+      console.log(text);
+    } catch (error) {
+      console.error("Error processing file: ", error);
+      alert("Failed to process file. See console for details.");
+    }
+  };
+
   return (
     <div>
       <Input id="file" type="file" onChange={handleFileChange} />
-      <Button disabled={!selectedFile}>Convert</Button>
+      <Button onClick={handleSubmit} disabled={!selectedFile}>
+        Convert
+      </Button>
     </div>
   );
 }
