@@ -2,6 +2,7 @@
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { lssToLibre } from "@/lib/libresplit-web/convert";
 import { useState } from "react";
 
 export function AppFileUpload() {
@@ -23,7 +24,7 @@ export function AppFileUpload() {
     try {
       // Get text from file and print to dev console.
       const text = await selectedFile.text();
-      console.log(text);
+      lssToLibre(text);
     } catch (error) {
       console.error("Error processing file: ", error);
       alert("Failed to process file. See console for details.");
